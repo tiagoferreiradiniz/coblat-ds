@@ -16,7 +16,7 @@ const meta = {
     },
     size: {
       control: 'select',
-      options: ['default', 'xs', 'sm', 'lg', 'icon', 'icon-xs', 'icon-sm', 'icon-lg'],
+      options: ['default', 'sm', 'lg', 'icon', 'icon-sm', 'icon-lg'],
     },
     disabled: {
       control: 'boolean',
@@ -34,7 +34,7 @@ export const Default = {
   },
   render: (args) => {
     // If size is an icon variant, show an icon instead of text
-    const iconSizes = ['icon', 'icon-xs', 'icon-sm', 'icon-lg'];
+    const iconSizes = ['icon', 'icon-sm', 'icon-lg'];
     if (iconSizes.includes(args.size)) {
       return React.createElement(Button, { 
         ...args, 
@@ -54,7 +54,7 @@ export const Outline = {
   },
   render: (args) => {
     // If size is an icon variant, show an icon instead of text
-    const iconSizes = ['icon', 'icon-xs', 'icon-sm', 'icon-lg'];
+    const iconSizes = ['icon', 'icon-sm', 'icon-lg'];
     if (iconSizes.includes(args.size)) {
       return React.createElement(Button, { 
         ...args, 
@@ -74,7 +74,7 @@ export const Secondary = {
   },
   render: (args) => {
     // If size is an icon variant, show an icon instead of text
-    const iconSizes = ['icon', 'icon-xs', 'icon-sm', 'icon-lg'];
+    const iconSizes = ['icon', 'icon-sm', 'icon-lg'];
     if (iconSizes.includes(args.size)) {
       return React.createElement(Button, { 
         ...args, 
@@ -94,7 +94,7 @@ export const Ghost = {
   },
   render: (args) => {
     // If size is an icon variant, show an icon instead of text
-    const iconSizes = ['icon', 'icon-xs', 'icon-sm', 'icon-lg'];
+    const iconSizes = ['icon', 'icon-sm', 'icon-lg'];
     if (iconSizes.includes(args.size)) {
       return React.createElement(Button, { 
         ...args, 
@@ -114,7 +114,7 @@ export const Destructive = {
   },
   render: (args) => {
     // If size is an icon variant, show an icon instead of text
-    const iconSizes = ['icon', 'icon-xs', 'icon-sm', 'icon-lg'];
+    const iconSizes = ['icon', 'icon-sm', 'icon-lg'];
     if (iconSizes.includes(args.size)) {
       return React.createElement(Button, { 
         ...args, 
@@ -134,7 +134,7 @@ export const Link = {
   },
   render: (args) => {
     // If size is an icon variant, show an icon instead of text
-    const iconSizes = ['icon', 'icon-xs', 'icon-sm', 'icon-lg'];
+    const iconSizes = ['icon', 'icon-sm', 'icon-lg'];
     if (iconSizes.includes(args.size)) {
       return React.createElement(Button, { 
         ...args, 
@@ -150,7 +150,6 @@ export const Sizes = {
   render: (args) => {
     const React = require('react');
     return React.createElement('div', { className: 'flex items-center gap-4' },
-      React.createElement(Button, { ...args, size: 'xs' }, 'Extra Small'),
       React.createElement(Button, { ...args, size: 'sm' }, 'Small'),
       React.createElement(Button, { ...args, size: 'default' }, 'Default'),
       React.createElement(Button, { ...args, size: 'lg' }, 'Large')
@@ -172,13 +171,6 @@ export const Icon = {
   }, React.createElement(HeartIcon)),
 };
 
-export const IconXS = {
-  render: () => React.createElement(Button, { 
-    size: 'icon-xs', 
-    'aria-label': 'Favorite' 
-  }, React.createElement(HeartIcon)),
-};
-
 export const IconSM = {
   render: () => React.createElement(Button, { 
     size: 'icon-sm', 
@@ -197,7 +189,6 @@ export const IconVariants = {
   render: () => {
     const React = require('react');
     return React.createElement('div', { className: 'flex items-center gap-4' },
-      React.createElement(Button, { size: 'icon-xs', 'aria-label': 'Extra Small Icon' }, React.createElement(HeartIcon)),
       React.createElement(Button, { size: 'icon-sm', 'aria-label': 'Small Icon' }, React.createElement(HeartIcon)),
       React.createElement(Button, { size: 'icon', 'aria-label': 'Default Icon' }, React.createElement(HeartIcon)),
       React.createElement(Button, { size: 'icon-lg', 'aria-label': 'Large Icon' }, React.createElement(HeartIcon))

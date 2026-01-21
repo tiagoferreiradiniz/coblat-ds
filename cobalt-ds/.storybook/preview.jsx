@@ -28,12 +28,8 @@ const preview = {
       const theme = context.globals.theme || 'light';
       return React.createElement(
         'div',
-        { className: theme === 'dark' ? 'dark' : '' },
-        React.createElement(
-          'div',
-          { className: 'min-h-screen bg-background text-foreground p-8' },
-          React.createElement(Story)
-        )
+        { className: theme === 'dark' ? 'dark' : '', style: { padding: '1rem' } },
+        React.createElement(Story)
       );
     },
   ],
