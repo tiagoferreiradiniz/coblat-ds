@@ -32,6 +32,18 @@ export const Default = {
     variant: 'default',
     size: 'default',
   },
+  render: (args) => {
+    // If size is an icon variant, show an icon instead of text
+    const iconSizes = ['icon', 'icon-xs', 'icon-sm', 'icon-lg'];
+    if (iconSizes.includes(args.size)) {
+      return React.createElement(Button, { 
+        ...args, 
+        'aria-label': 'Icon button' 
+      }, React.createElement(HeartIcon));
+    }
+    // Otherwise, show the text children
+    return React.createElement(Button, args);
+  },
 };
 
 export const Outline = {
@@ -39,6 +51,18 @@ export const Outline = {
     children: 'Button',
     variant: 'outline',
     size: 'default',
+  },
+  render: (args) => {
+    // If size is an icon variant, show an icon instead of text
+    const iconSizes = ['icon', 'icon-xs', 'icon-sm', 'icon-lg'];
+    if (iconSizes.includes(args.size)) {
+      return React.createElement(Button, { 
+        ...args, 
+        'aria-label': 'Icon button' 
+      }, React.createElement(HeartIcon));
+    }
+    // Otherwise, show the text children
+    return React.createElement(Button, args);
   },
 };
 
@@ -48,6 +72,18 @@ export const Secondary = {
     variant: 'secondary',
     size: 'default',
   },
+  render: (args) => {
+    // If size is an icon variant, show an icon instead of text
+    const iconSizes = ['icon', 'icon-xs', 'icon-sm', 'icon-lg'];
+    if (iconSizes.includes(args.size)) {
+      return React.createElement(Button, { 
+        ...args, 
+        'aria-label': 'Icon button' 
+      }, React.createElement(HeartIcon));
+    }
+    // Otherwise, show the text children
+    return React.createElement(Button, args);
+  },
 };
 
 export const Ghost = {
@@ -55,6 +91,18 @@ export const Ghost = {
     children: 'Button',
     variant: 'ghost',
     size: 'default',
+  },
+  render: (args) => {
+    // If size is an icon variant, show an icon instead of text
+    const iconSizes = ['icon', 'icon-xs', 'icon-sm', 'icon-lg'];
+    if (iconSizes.includes(args.size)) {
+      return React.createElement(Button, { 
+        ...args, 
+        'aria-label': 'Icon button' 
+      }, React.createElement(HeartIcon));
+    }
+    // Otherwise, show the text children
+    return React.createElement(Button, args);
   },
 };
 
@@ -64,6 +112,18 @@ export const Destructive = {
     variant: 'destructive',
     size: 'default',
   },
+  render: (args) => {
+    // If size is an icon variant, show an icon instead of text
+    const iconSizes = ['icon', 'icon-xs', 'icon-sm', 'icon-lg'];
+    if (iconSizes.includes(args.size)) {
+      return React.createElement(Button, { 
+        ...args, 
+        'aria-label': 'Icon button' 
+      }, React.createElement(HeartIcon));
+    }
+    // Otherwise, show the text children
+    return React.createElement(Button, args);
+  },
 };
 
 export const Link = {
@@ -71,6 +131,18 @@ export const Link = {
     children: 'Button',
     variant: 'link',
     size: 'default',
+  },
+  render: (args) => {
+    // If size is an icon variant, show an icon instead of text
+    const iconSizes = ['icon', 'icon-xs', 'icon-sm', 'icon-lg'];
+    if (iconSizes.includes(args.size)) {
+      return React.createElement(Button, { 
+        ...args, 
+        'aria-label': 'Icon button' 
+      }, React.createElement(HeartIcon));
+    }
+    // Otherwise, show the text children
+    return React.createElement(Button, args);
   },
 };
 
