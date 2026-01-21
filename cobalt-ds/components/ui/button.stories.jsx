@@ -1,4 +1,6 @@
+import React from 'react';
 import { Button } from './button';
+import { HeartIcon, StarIcon, PlusIcon, SettingsIcon } from 'lucide-react';
 
 const meta = {
   title: 'UI/Button',
@@ -88,5 +90,45 @@ export const Disabled = {
   args: {
     children: 'Disabled Button',
     disabled: true,
+  },
+};
+
+export const Icon = {
+  render: () => React.createElement(Button, { 
+    size: 'icon', 
+    'aria-label': 'Like' 
+  }, React.createElement(HeartIcon)),
+};
+
+export const IconXS = {
+  render: () => React.createElement(Button, { 
+    size: 'icon-xs', 
+    'aria-label': 'Favorite' 
+  }, React.createElement(StarIcon)),
+};
+
+export const IconSM = {
+  render: () => React.createElement(Button, { 
+    size: 'icon-sm', 
+    'aria-label': 'Add' 
+  }, React.createElement(PlusIcon)),
+};
+
+export const IconLG = {
+  render: () => React.createElement(Button, { 
+    size: 'icon-lg', 
+    'aria-label': 'Settings' 
+  }, React.createElement(SettingsIcon)),
+};
+
+export const IconVariants = {
+  render: () => {
+    const React = require('react');
+    return React.createElement('div', { className: 'flex items-center gap-4' },
+      React.createElement(Button, { size: 'icon-xs', 'aria-label': 'Extra Small Icon' }, React.createElement(StarIcon)),
+      React.createElement(Button, { size: 'icon-sm', 'aria-label': 'Small Icon' }, React.createElement(PlusIcon)),
+      React.createElement(Button, { size: 'icon', 'aria-label': 'Default Icon' }, React.createElement(HeartIcon)),
+      React.createElement(Button, { size: 'icon-lg', 'aria-label': 'Large Icon' }, React.createElement(SettingsIcon))
+    );
   },
 };
