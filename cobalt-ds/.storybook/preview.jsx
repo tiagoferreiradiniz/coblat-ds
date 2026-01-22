@@ -28,7 +28,15 @@ const preview = {
       const theme = context.globals.theme || 'light';
       return React.createElement(
         'div',
-        { className: theme === 'dark' ? 'dark' : '', style: { padding: '1rem' } },
+        { 
+          className: theme === 'dark' ? 'dark' : '', 
+          style: { 
+            padding: '1rem',
+            minHeight: '100vh',
+            backgroundColor: theme === 'dark' ? 'var(--background)' : 'transparent',
+            color: theme === 'dark' ? 'var(--foreground)' : 'inherit'
+          } 
+        },
         React.createElement(Story)
       );
     },

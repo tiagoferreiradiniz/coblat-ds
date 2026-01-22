@@ -12,11 +12,11 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'outline', 'secondary', 'ghost', 'destructive', 'link'],
+      options: ['primary', 'outline', 'secondary', 'ghost', 'destructive', 'link'],
     },
     size: {
       control: 'select',
-      options: ['default', 'sm', 'lg', 'icon', 'icon-sm', 'icon-lg'],
+      options: ['md', 'sm', 'lg', 'icon', 'icon-sm', 'icon-lg'],
     },
     disabled: {
       control: 'boolean',
@@ -26,11 +26,11 @@ const meta = {
 
 export default meta;
 
-export const Default = {
+export const Primary = {
   args: {
     children: 'Button',
-    variant: 'default',
-    size: 'default',
+    variant: 'primary',
+    size: 'md',
   },
   render: (args) => {
     // If size is an icon variant, show an icon instead of text
@@ -50,7 +50,7 @@ export const Outline = {
   args: {
     children: 'Button',
     variant: 'outline',
-    size: 'default',
+    size: 'md',
   },
   render: (args) => {
     // If size is an icon variant, show an icon instead of text
@@ -70,7 +70,7 @@ export const Secondary = {
   args: {
     children: 'Button',
     variant: 'secondary',
-    size: 'default',
+    size: 'md',
   },
   render: (args) => {
     // If size is an icon variant, show an icon instead of text
@@ -90,7 +90,7 @@ export const Ghost = {
   args: {
     children: 'Button',
     variant: 'ghost',
-    size: 'default',
+    size: 'md',
   },
   render: (args) => {
     // If size is an icon variant, show an icon instead of text
@@ -110,7 +110,7 @@ export const Destructive = {
   args: {
     children: 'Button',
     variant: 'destructive',
-    size: 'default',
+    size: 'md',
   },
   render: (args) => {
     // If size is an icon variant, show an icon instead of text
@@ -130,7 +130,7 @@ export const Link = {
   args: {
     children: 'Button',
     variant: 'link',
-    size: 'default',
+    size: 'md',
   },
   render: (args) => {
     // If size is an icon variant, show an icon instead of text
@@ -151,7 +151,7 @@ export const Sizes = {
     const React = require('react');
     return React.createElement('div', { className: 'flex items-center gap-4' },
       React.createElement(Button, { ...args, size: 'sm' }, 'Small'),
-      React.createElement(Button, { ...args, size: 'default' }, 'Default'),
+      React.createElement(Button, { ...args, size: 'md' }, 'Medium'),
       React.createElement(Button, { ...args, size: 'lg' }, 'Large')
     );
   },
@@ -161,6 +161,60 @@ export const Disabled = {
   args: {
     children: 'Disabled Button',
     disabled: true,
+  },
+};
+
+export const States = {
+  render: () => {
+    const React = require('react');
+    return React.createElement('div', { className: 'flex flex-col gap-8' },
+      React.createElement('div', { className: 'flex flex-col gap-3' },
+        React.createElement('h3', { className: 'text-sm font-semibold text-foreground mb-1' }, 'Default State'),
+        React.createElement('div', { className: 'flex items-center gap-4 flex-wrap' },
+          React.createElement(Button, { variant: 'primary' }, 'Primary'),
+          React.createElement(Button, { variant: 'outline' }, 'Outline'),
+          React.createElement(Button, { variant: 'secondary' }, 'Secondary'),
+          React.createElement(Button, { variant: 'ghost' }, 'Ghost'),
+          React.createElement(Button, { variant: 'destructive' }, 'Destructive'),
+          React.createElement(Button, { variant: 'link' }, 'Link')
+        )
+      ),
+      React.createElement('div', { className: 'flex flex-col gap-3' },
+        React.createElement('h3', { className: 'text-sm font-semibold text-foreground mb-1' }, 'Hover State (hover over buttons to see)'),
+        React.createElement('p', { className: 'text-xs text-muted-foreground mb-2' }, 'Move your mouse over the buttons below to see hover effects'),
+        React.createElement('div', { className: 'flex items-center gap-4 flex-wrap' },
+          React.createElement(Button, { variant: 'primary' }, 'Primary'),
+          React.createElement(Button, { variant: 'outline' }, 'Outline'),
+          React.createElement(Button, { variant: 'secondary' }, 'Secondary'),
+          React.createElement(Button, { variant: 'ghost' }, 'Ghost'),
+          React.createElement(Button, { variant: 'destructive' }, 'Destructive'),
+          React.createElement(Button, { variant: 'link' }, 'Link')
+        )
+      ),
+      React.createElement('div', { className: 'flex flex-col gap-3' },
+        React.createElement('h3', { className: 'text-sm font-semibold text-foreground mb-1' }, 'Focus State (click to focus)'),
+        React.createElement('p', { className: 'text-xs text-muted-foreground mb-2' }, 'Click or tab to focus the buttons below to see focus ring'),
+        React.createElement('div', { className: 'flex items-center gap-4 flex-wrap' },
+          React.createElement(Button, { variant: 'primary' }, 'Primary'),
+          React.createElement(Button, { variant: 'outline' }, 'Outline'),
+          React.createElement(Button, { variant: 'secondary' }, 'Secondary'),
+          React.createElement(Button, { variant: 'ghost' }, 'Ghost'),
+          React.createElement(Button, { variant: 'destructive' }, 'Destructive'),
+          React.createElement(Button, { variant: 'link' }, 'Link')
+        )
+      ),
+      React.createElement('div', { className: 'flex flex-col gap-3' },
+        React.createElement('h3', { className: 'text-sm font-semibold text-foreground mb-1' }, 'Disabled State'),
+        React.createElement('div', { className: 'flex items-center gap-4 flex-wrap' },
+          React.createElement(Button, { variant: 'primary', disabled: true }, 'Primary'),
+          React.createElement(Button, { variant: 'outline', disabled: true }, 'Outline'),
+          React.createElement(Button, { variant: 'secondary', disabled: true }, 'Secondary'),
+          React.createElement(Button, { variant: 'ghost', disabled: true }, 'Ghost'),
+          React.createElement(Button, { variant: 'destructive', disabled: true }, 'Destructive'),
+          React.createElement(Button, { variant: 'link', disabled: true }, 'Link')
+        )
+      )
+    );
   },
 };
 
@@ -190,7 +244,7 @@ export const IconVariants = {
     const React = require('react');
     return React.createElement('div', { className: 'flex items-center gap-4' },
       React.createElement(Button, { size: 'icon-sm', 'aria-label': 'Small Icon' }, React.createElement(HeartIcon)),
-      React.createElement(Button, { size: 'icon', 'aria-label': 'Default Icon' }, React.createElement(HeartIcon)),
+      React.createElement(Button, { size: 'icon', 'aria-label': 'Medium Icon' }, React.createElement(HeartIcon)),
       React.createElement(Button, { size: 'icon-lg', 'aria-label': 'Large Icon' }, React.createElement(HeartIcon))
     );
   },
